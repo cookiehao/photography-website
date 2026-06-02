@@ -13,51 +13,41 @@ import type { ContactCardTitle } from "@/components/contact-card";
 
 export const siteConfig = {
   /** Site name used in metadata, logo, and branding */
-  name: "ECarry",
+  name: "纽扣Niukouu",
 
   /** Tagline shown alongside name (e.g. "Photo", "Photography") */
   tagline: "Photo",
 
   /** Your role/title shown in profile cards and footer */
-  role: "Photographer",
+  role: "女摄 · 自然与复古",
 
   /** Short bio shown on the home page profile card */
-  bio: "I'm ECarry, a photographer dedicated to capturing authentic moments and telling stories through creative and emotional imagery, wherever my journey takes me.",
+  bio: "我是纽扣Niukouu，一名常驻北京的女性摄影师，偏爱自然与复古的视觉表达。习惯用镜头捕捉真实细腻的瞬间，在光影与色彩之间记录情绪与故事。",
 
   /** Avatar image path (place your avatar in /public/avatar.jpg) */
   avatar: "/avatar.jpg",
 
   /** Initials used as avatar fallback */
-  initials: "EC",
+  initials: "Nk",
 
   /** Site metadata for SEO */
   metadata: {
     title: {
-      template: "%s - ECarry Photography",
-      default: "ECarry Photography",
+      template: "%s - 纽扣Niukouu Photography",
+      default: "纽扣Niukouu Photography",
     },
-    description: "ECarry Photography",
+    description: "纽扣Niukouu Photography",
   },
 
   /** Social links shown in profile card and footer */
   socialLinks: [
     {
       title: "Instagram",
-      href: "https://instagram.com/ekkooooooooooo0o0",
-    },
-    {
-      title: "GitHub",
-      href: "https://github.com/ecarry",
+      href: "https://instagram.com/",
     },
     {
       title: "Xiaohongshu",
-      href: "https://www.xiaohongshu.com/user/profile/66c84ba2000000001b01b3f1",
-    },
-    {
-      title: "Contact me",
-      href: "mailto:lianshiliang93@gmail.com",
-      /** If true, this link gets the primary button style */
-      primary: true,
+      href: "https://xhslink.com/m/7nmSeRewkse",
     },
   ] as { title: ContactCardTitle; href: string; primary?: boolean }[],
 
@@ -68,8 +58,8 @@ export const siteConfig = {
       href: "https://templates.gola.io/template/hanssen",
     },
     poweredBy: {
-      name: "ECarry",
-      href: "https://github.com/ecarry",
+      name: "纽扣Niukouu",
+      href: "https://xhslink.com/m/7nmSeRewkse",
     },
   },
 

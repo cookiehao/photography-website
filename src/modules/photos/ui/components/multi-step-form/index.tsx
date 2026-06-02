@@ -155,10 +155,10 @@ export default function MultiStepForm({
             trpc.photos.getMany.queryOptions({})
           );
           await queryClient.invalidateQueries(
-            trpc.home.getManyLikePhotos.queryOptions({ limit: 10 })
+            trpc.home.getManyLikePhotos.pathFilter()
           );
           await queryClient.invalidateQueries(
-            trpc.home.getCitySets.queryOptions({ limit: 9 })
+            trpc.home.getCitySets.pathFilter()
           );
           await queryClient.invalidateQueries(trpc.city.getMany.queryOptions());
 

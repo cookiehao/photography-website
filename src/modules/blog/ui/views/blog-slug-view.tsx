@@ -9,6 +9,7 @@ import ContactCard from "@/components/contact-card";
 import Footer from "@/components/footer";
 import { keyToUrl } from "@/modules/s3/lib/key-to-url";
 import RichTextViewer from "@/components/editor/rich-text-viewer";
+import { siteConfig } from "@/site.config";
 
 export const BlogSlugView = ({ slug }: { slug: string }) => {
   const trpc = useTRPC();
@@ -82,12 +83,17 @@ export const BlogSlugView = ({ slug }: { slug: string }) => {
         {/* POST PREVIEW */}
         <RichTextViewer content={data.content || ""} />
 
-        {/* CONTACT CARD  */}
-        <ContactCard
-          title="Contact me"
-          href="mailto:lianshiliang93@gmail.com"
-          className="bg-primary text-white hover:text-black dark:text-black dark:hover:text-white h-14"
-        />
+        {/* CONTACT CARDS  */}
+        <div className="grid grid-cols-2 gap-3">
+          {siteConfig.socialLinks.map((link) => (
+            <ContactCard
+              key={link.title}
+              title={link.title}
+              href={link.href}
+              className="h-14"
+            />
+          ))}
+        </div>
 
         {/* FOOTER  */}
         <Footer />

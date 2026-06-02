@@ -8,6 +8,7 @@ import ContactCard from "@/components/contact-card";
 import { PostsSection } from "../components/blog-items";
 import { LatestPostSection } from "../components/latest-blog-section";
 import { Skeleton } from "@/components/ui/skeleton";
+import { siteConfig } from "@/site.config";
 
 export const BlogView = () => {
   const trpc = useTRPC();
@@ -47,13 +48,9 @@ export const BlogView = () => {
 
         {/* CONTACT CARDS  */}
         <div className="w-full grid grid-cols-2 gap-3 mt-3">
-          <ContactCard title="Instagram" />
-          <ContactCard title="GitHub" />
-          <ContactCard title="X" />
-          <ContactCard
-            title="Contact me"
-            className="bg-primary hover:bg-primary-hover text-white dark:text-black"
-          />
+          {siteConfig.socialLinks.map((link) => (
+            <ContactCard key={link.title} title={link.title} href={link.href} />
+          ))}
         </div>
 
         {/* FOOTER  */}
@@ -104,13 +101,9 @@ export const BlogViewLoadingStatus = () => {
 
         {/* CONTACT CARDS  */}
         <div className="w-full grid grid-cols-2 gap-3 mt-3">
-          <ContactCard title="Instagram" />
-          <ContactCard title="GitHub" />
-          <ContactCard title="X" />
-          <ContactCard
-            title="Contact me"
-            className="bg-primary hover:bg-primary-hover text-white dark:text-black"
-          />
+          {siteConfig.socialLinks.map((link) => (
+            <ContactCard key={link.title} title={link.title} href={link.href} />
+          ))}
         </div>
 
         {/* FOOTER  */}

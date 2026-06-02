@@ -1,21 +1,12 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { MdEmail } from "react-icons/md";
-import {
-  PiArrowUpRight,
-  PiInstagramLogo,
-  PiGithubLogo,
-  PiXLogo,
-} from "react-icons/pi";
+import { PiArrowUpRight, PiInstagramLogo } from "react-icons/pi";
 import { SiXiaohongshu } from "react-icons/si";
 
 // icon map
 const iconMap = {
   Instagram: <PiInstagramLogo size={18} />,
-  GitHub: <PiGithubLogo size={18} />,
-  X: <PiXLogo size={18} />,
   Xiaohongshu: <SiXiaohongshu size={18} />,
-  "Contact me": <MdEmail size={18} />,
 };
 
 export type ContactCardTitle = keyof typeof iconMap;

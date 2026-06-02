@@ -17,14 +17,18 @@ import {
   SliderView,
 } from "@/modules/home/ui/views/slider-view";
 
+export const dynamic = "force-dynamic";
+
 const page = async () => {
   const queryClient = getQueryClient();
-  void queryClient.prefetchQuery(
-    trpc.home.getManyLikePhotos.queryOptions({ limit: 10 })
-  );
-  void queryClient.prefetchQuery(
-    trpc.home.getCitySets.queryOptions({ limit: 12 })
-  );
+  await Promise.all([
+    queryClient.prefetchQuery(
+      trpc.home.getManyLikePhotos.queryOptions({ limit: 10 })
+    ),
+    queryClient.prefetchQuery(
+      trpc.home.getCitySets.queryOptions({ limit: 12 })
+    ),
+  ]);
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>

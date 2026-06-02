@@ -39,6 +39,13 @@ export function VisibilityToggle({
           await queryClient.invalidateQueries(
             trpc.photos.getMany.queryOptions({})
           );
+          // Also refresh the home page (favorites carousel + city sets)
+          await queryClient.invalidateQueries(
+            trpc.home.getManyLikePhotos.pathFilter()
+          );
+          await queryClient.invalidateQueries(
+            trpc.home.getCitySets.pathFilter()
+          );
           toast.success(
             `Photo is now ${newValue === "public" ? "public" : "private"}`
           );
